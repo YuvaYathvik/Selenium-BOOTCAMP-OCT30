@@ -9,6 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.Test;
 
+import io.cucumber.java.en.And;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class CreateWorkTypeGroup extends BaseClass{
@@ -45,5 +46,6 @@ public class CreateWorkTypeGroup extends BaseClass{
 		  String text = driver.findElement(By.xpath("(//span [@class = 'uiOutputText'])[2]")).getText();
 		  System.out.println(text);
 	}
+
 
 }

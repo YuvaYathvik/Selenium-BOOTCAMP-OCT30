@@ -12,13 +12,11 @@ import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class CreateNewOpportunity extends BaseClass{
+public class CreateNewOpportunity {
 
-	private static final String JavascriptExecutor = null;
 
 	@SuppressWarnings("deprecation")
-	@Ignore
-	@Test (invocationCount = 3)
+	@Test (invocationCount = 2)
 	public void main() throws InterruptedException {
 		
 	

@@ -1,6 +1,5 @@
 package Selenium.Started.Nov;
 
-import java.awt.RenderingHints.Key;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -12,12 +11,12 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class Edit_Individuals {
+public class Delete_Individuals {
 
-	@SuppressWarnings("deprecation")
 	public static void main(String[] args) throws InterruptedException {
-	
-		  WebDriverManager.chromedriver().setup();
+		// TODO Auto-generated method stub
+
+		WebDriverManager.chromedriver().setup();
 	    
 		  ChromeDriver driver  = new ChromeDriver();
 					    
@@ -47,37 +46,28 @@ public class Edit_Individuals {
 		  JavascriptExecutor exe = (JavascriptExecutor) driver;
 		  driver.executeScript("arguments [0].click();", click);
 		  
-		 // 4. Search the Individuals 'Yathvik'
+		 //5. Search the Individuals 'Yathvik'
 		  driver.findElement(By.xpath("//input [@placeholder = 'Search this list...']")).
 		  sendKeys("Yathvik"+ Keys.ENTER);
 		  
-		  Thread.sleep(10000);
-		 // 5. Click on the Dropdown icon and Select Edit
+		  Thread.sleep(1000);
+		  //6. Click on the Dropdown icon and Select Delete
 		  WebElement click1 = driver.findElement(By.xpath("//a[contains(@class,'slds-button slds-button--icon-x-small')]"));
 		  JavascriptExecutor exe1 = (JavascriptExecutor) driver;
 		  driver.executeScript("arguments [0].click();", click1);
 		  
-		  driver.executeScript("arguments[0].click()",driver.findElement(By.xpath("//li[@class = 'uiMenuItem'][1]/a")));
+		  driver.executeScript("arguments [0].click()", driver.findElement(By.xpath("//a[@title = 'Delete']")));
+ 
+		  //7.Click on the Delete option in the displayed popup window.
+		   driver.executeScript("arguments [0].click()", driver.findElement(By.xpath("//button[@title = 'Delete']")));
 		  
-		 // 6.Select Salutation as 'Mr'
-		  WebElement click3 = driver.findElement(By.xpath("//a [@class = 'select']"));
-		  JavascriptExecutor exe3 = (JavascriptExecutor) driver;
-		  driver.executeScript("arguments [0].click()", click3);
-		  
-		  driver.findElement(By.xpath("//a [@title = 'Mr.']")).click();
-		  
-		//  7.Enter the first name as 'Ganesh'
-		  driver.findElement(By.xpath("//input [@placeholder = 'First Name']")).sendKeys("Dev");
-		  
-		//  8. Click on Save and Verify the first name as 'Ganesh'
-		  driver.findElement(By.xpath("//button [ @title = 'Save']")).click();
-		  
-		  Thread.sleep(1000);
-		  
-		 String text = driver.findElement(By.linkText("Dev Yathvik")).getText();
-		 System.out.println(text);
+		  // 8. Verify Whether Individual is Deleted using Individual last name
+		   String text = driver.findElement(By.xpath("//span[text() = 'No items to display.']")).getText();
+		  System.out.println(text);
+		 
+		
 
-
+		
 	}
 
 }

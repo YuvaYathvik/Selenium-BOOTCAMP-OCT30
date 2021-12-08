@@ -16,7 +16,7 @@ public class Verify_Dashboard_Subscribe {
 
 	@SuppressWarnings("deprecation")
 	@Test
-	public void main() throws InterruptedException {
+	public void testcase1() throws InterruptedException {
 		// TODO Auto-generated method stub
           WebDriverManager.chromedriver().setup();
 	      
@@ -77,7 +77,7 @@ public class Verify_Dashboard_Subscribe {
 		 	
 			System.out.println(text);
 	
-		 	//System.out.println("Your subscription is all set");
+		
 		 	
 
 		 

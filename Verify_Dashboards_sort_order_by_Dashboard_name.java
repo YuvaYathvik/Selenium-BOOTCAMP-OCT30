@@ -17,7 +17,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class Verify_Dashboards_sort_order_by_Dashboard_name {
 
 	@SuppressWarnings("deprecation")
-	@Test
+	@Test 
 	public void main() throws InterruptedException {
 		// TODO Auto-generated method stub
 		

@@ -12,15 +12,17 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.Test;
 
+import com.github.dockerjava.core.InvocationBuilder;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Create_Individuals_without_mandatory_fields {
 
 	@SuppressWarnings("deprecation")
-	@Test
+	@Test (invocationCount = 2)
 	public void main() throws InterruptedException {
 		
-      WebDriverManager.chromedriver().setup();
+        WebDriverManager.chromedriver().setup();
 	    
 	    ChromeDriver driver  = new ChromeDriver();
 	    

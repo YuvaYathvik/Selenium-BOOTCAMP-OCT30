@@ -64,24 +64,26 @@ public class Verify_WorkType_Group_sort_order_by_Name {
 		JavascriptExecutor executor1 = (JavascriptExecutor) driver;
 	    driver.executeScript("arguments[0].click();", click1);
 		  
+	    Thread.sleep(1000);
+	    
 		 int size = driver.findElements(By.xpath("//tbody/tr")).size();
-			System.out.println(size);
-			java.util.List<String> names = new ArrayList<String>();
+		 System.out.println(size);
+		java.util.List<String> names = new ArrayList<String>();
 			int i=1;
 	   //5. Verify the Work Type Group displayed in ascending order by Work Type Group Name.	
 			do {
 				try {
-				//driver.findElement(By.xpath("//tbody/tr["+i+"]th/span/a")).sendKeys(Keys.PAGE_DOWN);
-				System.out.println(driver.findElement(By.xpath("//tbody/tr["+i+"]th/span/a")).getText());
+					driver.findElement(By.xpath("//tbody/tr["+i+"]//th/span/a"));
+				System.out.println(driver.findElement(By.xpath("//tbody/tr["+i+"]//th/span/a")).getText());
 				} catch(org.openqa.selenium.NoSuchElementException e) {
 				break;
 				}
-				i=i+1;
+			    i=i+1;
 
 				} while (true);
 				System.out.println("Completed");
 			
-		
+			//	.sendKeys(Keys.PAGE_DOWN);
 	}
 
 }
